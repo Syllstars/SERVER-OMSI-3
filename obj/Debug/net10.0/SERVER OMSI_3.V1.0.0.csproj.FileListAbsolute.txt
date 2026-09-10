@@ -1,0 +1,191 @@
+/home/raspberry/Documents/SERVER OMSI_3.V1.0.0/bin/Debug/net10.0/appsettings.Development.json
+/home/raspberry/Documents/SERVER OMSI_3.V1.0.0/bin/Debug/net10.0/appsettings.json
+/home/raspberry/Documents/SERVER OMSI_3.V1.0.0/bin/Debug/net10.0/SERVER OMSI_3.V1.0.0.staticwebassets.runtime.json
+/home/raspberry/Documents/SERVER OMSI_3.V1.0.0/bin/Debug/net10.0/SERVER OMSI_3.V1.0.0.staticwebassets.endpoints.json
+/home/raspberry/Documents/SERVER OMSI_3.V1.0.0/bin/Debug/net10.0/SERVER OMSI_3.V1.0.0
+/home/raspberry/Documents/SERVER OMSI_3.V1.0.0/bin/Debug/net10.0/SERVER OMSI_3.V1.0.0.deps.json
+/home/raspberry/Documents/SERVER OMSI_3.V1.0.0/bin/Debug/net10.0/SERVER OMSI_3.V1.0.0.runtimeconfig.json
+/home/raspberry/Documents/SERVER OMSI_3.V1.0.0/bin/Debug/net10.0/SERVER OMSI_3.V1.0.0.dll
+/home/raspberry/Documents/SERVER OMSI_3.V1.0.0/bin/Debug/net10.0/SERVER OMSI_3.V1.0.0.pdb
+/home/raspberry/Documents/SERVER OMSI_3.V1.0.0/bin/Debug/net10.0/BCrypt.Net-Next.dll
+/home/raspberry/Documents/SERVER OMSI_3.V1.0.0/bin/Debug/net10.0/EFCore.NamingConventions.dll
+/home/raspberry/Documents/SERVER OMSI_3.V1.0.0/bin/Debug/net10.0/Humanizer.dll
+/home/raspberry/Documents/SERVER OMSI_3.V1.0.0/bin/Debug/net10.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll
+/home/raspberry/Documents/SERVER OMSI_3.V1.0.0/bin/Debug/net10.0/Microsoft.AspNetCore.OpenApi.dll
+/home/raspberry/Documents/SERVER OMSI_3.V1.0.0/bin/Debug/net10.0/Microsoft.Build.Framework.dll
+/home/raspberry/Documents/SERVER OMSI_3.V1.0.0/bin/Debug/net10.0/Microsoft.CodeAnalysis.dll
+/home/raspberry/Documents/SERVER OMSI_3.V1.0.0/bin/Debug/net10.0/Microsoft.CodeAnalysis.CSharp.dll
+/home/raspberry/Documents/SERVER OMSI_3.V1.0.0/bin/Debug/net10.0/Microsoft.CodeAnalysis.CSharp.Workspaces.dll
+/home/raspberry/Documents/SERVER OMSI_3.V1.0.0/bin/Debug/net10.0/Microsoft.CodeAnalysis.Workspaces.dll
+/home/raspberry/Documents/SERVER OMSI_3.V1.0.0/bin/Debug/net10.0/Microsoft.CodeAnalysis.ExternalAccess.RazorCompiler.dll
+/home/raspberry/Documents/SERVER OMSI_3.V1.0.0/bin/Debug/net10.0/Microsoft.CodeAnalysis.Workspaces.MSBuild.dll
+/home/raspberry/Documents/SERVER OMSI_3.V1.0.0/bin/Debug/net10.0/Microsoft.EntityFrameworkCore.dll
+/home/raspberry/Documents/SERVER OMSI_3.V1.0.0/bin/Debug/net10.0/Microsoft.EntityFrameworkCore.Abstractions.dll
+/home/raspberry/Documents/SERVER OMSI_3.V1.0.0/bin/Debug/net10.0/Microsoft.EntityFrameworkCore.Design.dll
+/home/raspberry/Documents/SERVER OMSI_3.V1.0.0/bin/Debug/net10.0/Microsoft.EntityFrameworkCore.Relational.dll
+/home/raspberry/Documents/SERVER OMSI_3.V1.0.0/bin/Debug/net10.0/Microsoft.Extensions.DependencyModel.dll
+/home/raspberry/Documents/SERVER OMSI_3.V1.0.0/bin/Debug/net10.0/Microsoft.IdentityModel.Abstractions.dll
+/home/raspberry/Documents/SERVER OMSI_3.V1.0.0/bin/Debug/net10.0/Microsoft.IdentityModel.JsonWebTokens.dll
+/home/raspberry/Documents/SERVER OMSI_3.V1.0.0/bin/Debug/net10.0/Microsoft.IdentityModel.Logging.dll
+/home/raspberry/Documents/SERVER OMSI_3.V1.0.0/bin/Debug/net10.0/Microsoft.IdentityModel.Protocols.dll
+/home/raspberry/Documents/SERVER OMSI_3.V1.0.0/bin/Debug/net10.0/Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+/home/raspberry/Documents/SERVER OMSI_3.V1.0.0/bin/Debug/net10.0/Microsoft.IdentityModel.Tokens.dll
+/home/raspberry/Documents/SERVER OMSI_3.V1.0.0/bin/Debug/net10.0/Microsoft.OpenApi.dll
+/home/raspberry/Documents/SERVER OMSI_3.V1.0.0/bin/Debug/net10.0/Microsoft.VisualStudio.SolutionPersistence.dll
+/home/raspberry/Documents/SERVER OMSI_3.V1.0.0/bin/Debug/net10.0/Mono.TextTemplating.dll
+/home/raspberry/Documents/SERVER OMSI_3.V1.0.0/bin/Debug/net10.0/Newtonsoft.Json.dll
+/home/raspberry/Documents/SERVER OMSI_3.V1.0.0/bin/Debug/net10.0/Npgsql.dll
+/home/raspberry/Documents/SERVER OMSI_3.V1.0.0/bin/Debug/net10.0/Npgsql.EntityFrameworkCore.PostgreSQL.dll
+/home/raspberry/Documents/SERVER OMSI_3.V1.0.0/bin/Debug/net10.0/Swashbuckle.AspNetCore.Swagger.dll
+/home/raspberry/Documents/SERVER OMSI_3.V1.0.0/bin/Debug/net10.0/Swashbuckle.AspNetCore.SwaggerGen.dll
+/home/raspberry/Documents/SERVER OMSI_3.V1.0.0/bin/Debug/net10.0/Swashbuckle.AspNetCore.SwaggerUI.dll
+/home/raspberry/Documents/SERVER OMSI_3.V1.0.0/bin/Debug/net10.0/System.CodeDom.dll
+/home/raspberry/Documents/SERVER OMSI_3.V1.0.0/bin/Debug/net10.0/System.Composition.AttributedModel.dll
+/home/raspberry/Documents/SERVER OMSI_3.V1.0.0/bin/Debug/net10.0/System.Composition.Convention.dll
+/home/raspberry/Documents/SERVER OMSI_3.V1.0.0/bin/Debug/net10.0/System.Composition.Hosting.dll
+/home/raspberry/Documents/SERVER OMSI_3.V1.0.0/bin/Debug/net10.0/System.Composition.Runtime.dll
+/home/raspberry/Documents/SERVER OMSI_3.V1.0.0/bin/Debug/net10.0/System.Composition.TypedParts.dll
+/home/raspberry/Documents/SERVER OMSI_3.V1.0.0/bin/Debug/net10.0/System.IdentityModel.Tokens.Jwt.dll
+/home/raspberry/Documents/SERVER OMSI_3.V1.0.0/bin/Debug/net10.0/cs/Microsoft.CodeAnalysis.resources.dll
+/home/raspberry/Documents/SERVER OMSI_3.V1.0.0/bin/Debug/net10.0/de/Microsoft.CodeAnalysis.resources.dll
+/home/raspberry/Documents/SERVER OMSI_3.V1.0.0/bin/Debug/net10.0/es/Microsoft.CodeAnalysis.resources.dll
+/home/raspberry/Documents/SERVER OMSI_3.V1.0.0/bin/Debug/net10.0/fr/Microsoft.CodeAnalysis.resources.dll
+/home/raspberry/Documents/SERVER OMSI_3.V1.0.0/bin/Debug/net10.0/it/Microsoft.CodeAnalysis.resources.dll
+/home/raspberry/Documents/SERVER OMSI_3.V1.0.0/bin/Debug/net10.0/ja/Microsoft.CodeAnalysis.resources.dll
+/home/raspberry/Documents/SERVER OMSI_3.V1.0.0/bin/Debug/net10.0/ko/Microsoft.CodeAnalysis.resources.dll
+/home/raspberry/Documents/SERVER OMSI_3.V1.0.0/bin/Debug/net10.0/pl/Microsoft.CodeAnalysis.resources.dll
+/home/raspberry/Documents/SERVER OMSI_3.V1.0.0/bin/Debug/net10.0/pt-BR/Microsoft.CodeAnalysis.resources.dll
+/home/raspberry/Documents/SERVER OMSI_3.V1.0.0/bin/Debug/net10.0/ru/Microsoft.CodeAnalysis.resources.dll
+/home/raspberry/Documents/SERVER OMSI_3.V1.0.0/bin/Debug/net10.0/tr/Microsoft.CodeAnalysis.resources.dll
+/home/raspberry/Documents/SERVER OMSI_3.V1.0.0/bin/Debug/net10.0/zh-Hans/Microsoft.CodeAnalysis.resources.dll
+/home/raspberry/Documents/SERVER OMSI_3.V1.0.0/bin/Debug/net10.0/zh-Hant/Microsoft.CodeAnalysis.resources.dll
+/home/raspberry/Documents/SERVER OMSI_3.V1.0.0/bin/Debug/net10.0/cs/Microsoft.CodeAnalysis.CSharp.resources.dll
+/home/raspberry/Documents/SERVER OMSI_3.V1.0.0/bin/Debug/net10.0/de/Microsoft.CodeAnalysis.CSharp.resources.dll
+/home/raspberry/Documents/SERVER OMSI_3.V1.0.0/bin/Debug/net10.0/es/Microsoft.CodeAnalysis.CSharp.resources.dll
+/home/raspberry/Documents/SERVER OMSI_3.V1.0.0/bin/Debug/net10.0/fr/Microsoft.CodeAnalysis.CSharp.resources.dll
+/home/raspberry/Documents/SERVER OMSI_3.V1.0.0/bin/Debug/net10.0/it/Microsoft.CodeAnalysis.CSharp.resources.dll
+/home/raspberry/Documents/SERVER OMSI_3.V1.0.0/bin/Debug/net10.0/ja/Microsoft.CodeAnalysis.CSharp.resources.dll
+/home/raspberry/Documents/SERVER OMSI_3.V1.0.0/bin/Debug/net10.0/ko/Microsoft.CodeAnalysis.CSharp.resources.dll
+/home/raspberry/Documents/SERVER OMSI_3.V1.0.0/bin/Debug/net10.0/pl/Microsoft.CodeAnalysis.CSharp.resources.dll
+/home/raspberry/Documents/SERVER OMSI_3.V1.0.0/bin/Debug/net10.0/pt-BR/Microsoft.CodeAnalysis.CSharp.resources.dll
+/home/raspberry/Documents/SERVER OMSI_3.V1.0.0/bin/Debug/net10.0/ru/Microsoft.CodeAnalysis.CSharp.resources.dll
+/home/raspberry/Documents/SERVER OMSI_3.V1.0.0/bin/Debug/net10.0/tr/Microsoft.CodeAnalysis.CSharp.resources.dll
+/home/raspberry/Documents/SERVER OMSI_3.V1.0.0/bin/Debug/net10.0/zh-Hans/Microsoft.CodeAnalysis.CSharp.resources.dll
+/home/raspberry/Documents/SERVER OMSI_3.V1.0.0/bin/Debug/net10.0/zh-Hant/Microsoft.CodeAnalysis.CSharp.resources.dll
+/home/raspberry/Documents/SERVER OMSI_3.V1.0.0/bin/Debug/net10.0/cs/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+/home/raspberry/Documents/SERVER OMSI_3.V1.0.0/bin/Debug/net10.0/de/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+/home/raspberry/Documents/SERVER OMSI_3.V1.0.0/bin/Debug/net10.0/es/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+/home/raspberry/Documents/SERVER OMSI_3.V1.0.0/bin/Debug/net10.0/fr/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+/home/raspberry/Documents/SERVER OMSI_3.V1.0.0/bin/Debug/net10.0/it/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+/home/raspberry/Documents/SERVER OMSI_3.V1.0.0/bin/Debug/net10.0/ja/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+/home/raspberry/Documents/SERVER OMSI_3.V1.0.0/bin/Debug/net10.0/ko/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+/home/raspberry/Documents/SERVER OMSI_3.V1.0.0/bin/Debug/net10.0/pl/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+/home/raspberry/Documents/SERVER OMSI_3.V1.0.0/bin/Debug/net10.0/pt-BR/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+/home/raspberry/Documents/SERVER OMSI_3.V1.0.0/bin/Debug/net10.0/ru/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+/home/raspberry/Documents/SERVER OMSI_3.V1.0.0/bin/Debug/net10.0/tr/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+/home/raspberry/Documents/SERVER OMSI_3.V1.0.0/bin/Debug/net10.0/zh-Hans/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+/home/raspberry/Documents/SERVER OMSI_3.V1.0.0/bin/Debug/net10.0/zh-Hant/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+/home/raspberry/Documents/SERVER OMSI_3.V1.0.0/bin/Debug/net10.0/cs/Microsoft.CodeAnalysis.Workspaces.resources.dll
+/home/raspberry/Documents/SERVER OMSI_3.V1.0.0/bin/Debug/net10.0/de/Microsoft.CodeAnalysis.Workspaces.resources.dll
+/home/raspberry/Documents/SERVER OMSI_3.V1.0.0/bin/Debug/net10.0/es/Microsoft.CodeAnalysis.Workspaces.resources.dll
+/home/raspberry/Documents/SERVER OMSI_3.V1.0.0/bin/Debug/net10.0/fr/Microsoft.CodeAnalysis.Workspaces.resources.dll
+/home/raspberry/Documents/SERVER OMSI_3.V1.0.0/bin/Debug/net10.0/it/Microsoft.CodeAnalysis.Workspaces.resources.dll
+/home/raspberry/Documents/SERVER OMSI_3.V1.0.0/bin/Debug/net10.0/ja/Microsoft.CodeAnalysis.Workspaces.resources.dll
+/home/raspberry/Documents/SERVER OMSI_3.V1.0.0/bin/Debug/net10.0/ko/Microsoft.CodeAnalysis.Workspaces.resources.dll
+/home/raspberry/Documents/SERVER OMSI_3.V1.0.0/bin/Debug/net10.0/pl/Microsoft.CodeAnalysis.Workspaces.resources.dll
+/home/raspberry/Documents/SERVER OMSI_3.V1.0.0/bin/Debug/net10.0/pt-BR/Microsoft.CodeAnalysis.Workspaces.resources.dll
+/home/raspberry/Documents/SERVER OMSI_3.V1.0.0/bin/Debug/net10.0/ru/Microsoft.CodeAnalysis.Workspaces.resources.dll
+/home/raspberry/Documents/SERVER OMSI_3.V1.0.0/bin/Debug/net10.0/tr/Microsoft.CodeAnalysis.Workspaces.resources.dll
+/home/raspberry/Documents/SERVER OMSI_3.V1.0.0/bin/Debug/net10.0/zh-Hans/Microsoft.CodeAnalysis.Workspaces.resources.dll
+/home/raspberry/Documents/SERVER OMSI_3.V1.0.0/bin/Debug/net10.0/zh-Hant/Microsoft.CodeAnalysis.Workspaces.resources.dll
+/home/raspberry/Documents/SERVER OMSI_3.V1.0.0/bin/Debug/net10.0/cs/Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
+/home/raspberry/Documents/SERVER OMSI_3.V1.0.0/bin/Debug/net10.0/de/Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
+/home/raspberry/Documents/SERVER OMSI_3.V1.0.0/bin/Debug/net10.0/es/Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
+/home/raspberry/Documents/SERVER OMSI_3.V1.0.0/bin/Debug/net10.0/fr/Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
+/home/raspberry/Documents/SERVER OMSI_3.V1.0.0/bin/Debug/net10.0/it/Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
+/home/raspberry/Documents/SERVER OMSI_3.V1.0.0/bin/Debug/net10.0/ja/Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
+/home/raspberry/Documents/SERVER OMSI_3.V1.0.0/bin/Debug/net10.0/ko/Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
+/home/raspberry/Documents/SERVER OMSI_3.V1.0.0/bin/Debug/net10.0/pl/Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
+/home/raspberry/Documents/SERVER OMSI_3.V1.0.0/bin/Debug/net10.0/pt-BR/Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
+/home/raspberry/Documents/SERVER OMSI_3.V1.0.0/bin/Debug/net10.0/ru/Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
+/home/raspberry/Documents/SERVER OMSI_3.V1.0.0/bin/Debug/net10.0/tr/Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
+/home/raspberry/Documents/SERVER OMSI_3.V1.0.0/bin/Debug/net10.0/zh-Hans/Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
+/home/raspberry/Documents/SERVER OMSI_3.V1.0.0/bin/Debug/net10.0/zh-Hant/Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll
+/home/raspberry/Documents/SERVER OMSI_3.V1.0.0/obj/Debug/net10.0/SERVER OMSI_3.V1.0.0.csproj.AssemblyReference.cache
+/home/raspberry/Documents/SERVER OMSI_3.V1.0.0/obj/Debug/net10.0/rpswa.dswa.cache.json
+/home/raspberry/Documents/SERVER OMSI_3.V1.0.0/obj/Debug/net10.0/SERVER OMSI_3.V1.0.0.GeneratedMSBuildEditorConfig.editorconfig
+/home/raspberry/Documents/SERVER OMSI_3.V1.0.0/obj/Debug/net10.0/SERVER OMSI_3.V1.0.0.AssemblyInfoInputs.cache
+/home/raspberry/Documents/SERVER OMSI_3.V1.0.0/obj/Debug/net10.0/SERVER OMSI_3.V1.0.0.AssemblyInfo.cs
+/home/raspberry/Documents/SERVER OMSI_3.V1.0.0/obj/Debug/net10.0/SERVER OMSI_3.V1.0.0.csproj.CoreCompileInputs.cache
+/home/raspberry/Documents/SERVER OMSI_3.V1.0.0/obj/Debug/net10.0/SERVER OMSI_3.V1.0.0.MvcApplicationPartsAssemblyInfo.cs
+/home/raspberry/Documents/SERVER OMSI_3.V1.0.0/obj/Debug/net10.0/SERVER OMSI_3.V1.0.0.MvcApplicationPartsAssemblyInfo.cache
+/home/raspberry/Documents/SERVER OMSI_3.V1.0.0/obj/Debug/net10.0/rjimswa.dswa.cache.json
+/home/raspberry/Documents/SERVER OMSI_3.V1.0.0/obj/Debug/net10.0/rjsmrazor.dswa.cache.json
+/home/raspberry/Documents/SERVER OMSI_3.V1.0.0/obj/Debug/net10.0/rjsmcshtml.dswa.cache.json
+/home/raspberry/Documents/SERVER OMSI_3.V1.0.0/obj/Debug/net10.0/scopedcss/bundle/SERVER OMSI_3.V1.0.0.styles.css
+/home/raspberry/Documents/SERVER OMSI_3.V1.0.0/obj/Debug/net10.0/compressed/qnalobfg8c-{0}-zx5x6al7n3-zx5x6al7n3.gz
+/home/raspberry/Documents/SERVER OMSI_3.V1.0.0/obj/Debug/net10.0/compressed/32vbf0c865-{0}-8tfx6xwrlt-8tfx6xwrlt.gz
+/home/raspberry/Documents/SERVER OMSI_3.V1.0.0/obj/Debug/net10.0/compressed/qmghr97qhd-{0}-8tfx6xwrlt-8tfx6xwrlt.gz
+/home/raspberry/Documents/SERVER OMSI_3.V1.0.0/obj/Debug/net10.0/compressed/ov65ovuzno-{0}-4ang5hwqcb-4ang5hwqcb.gz
+/home/raspberry/Documents/SERVER OMSI_3.V1.0.0/obj/Debug/net10.0/compressed/d7dzkrknih-{0}-cvn9igjiak-cvn9igjiak.gz
+/home/raspberry/Documents/SERVER OMSI_3.V1.0.0/obj/Debug/net10.0/compressed/91d92l584j-{0}-mcbodmz6qh-mcbodmz6qh.gz
+/home/raspberry/Documents/SERVER OMSI_3.V1.0.0/obj/Debug/net10.0/compressed/lai8kqbgw9-{0}-qqku2tvuls-qqku2tvuls.gz
+/home/raspberry/Documents/SERVER OMSI_3.V1.0.0/obj/Debug/net10.0/compressed/jibg64i6zv-{0}-l59tv6n41f-l59tv6n41f.gz
+/home/raspberry/Documents/SERVER OMSI_3.V1.0.0/obj/Debug/net10.0/compressed/dsinhov9og-{0}-yfv4gkphjf-yfv4gkphjf.gz
+/home/raspberry/Documents/SERVER OMSI_3.V1.0.0/obj/Debug/net10.0/compressed/y740whmpi5-{0}-3o05vt43h4-3o05vt43h4.gz
+/home/raspberry/Documents/SERVER OMSI_3.V1.0.0/obj/Debug/net10.0/compressed/jf4u2g8viv-{0}-l3bj2uq2n7-l3bj2uq2n7.gz
+/home/raspberry/Documents/SERVER OMSI_3.V1.0.0/obj/Debug/net10.0/compressed/t6cj25trwl-{0}-tzwibttp6o-tzwibttp6o.gz
+/home/raspberry/Documents/SERVER OMSI_3.V1.0.0/obj/Debug/net10.0/compressed/140y8lbly7-{0}-3inx6a7vu8-3inx6a7vu8.gz
+/home/raspberry/Documents/SERVER OMSI_3.V1.0.0/obj/Debug/net10.0/compressed/1yneg1o5e1-{0}-f8iw0w74dy-f8iw0w74dy.gz
+/home/raspberry/Documents/SERVER OMSI_3.V1.0.0/obj/Debug/net10.0/compressed/wf941ky96a-{0}-jk4m48lz5p-jk4m48lz5p.gz
+/home/raspberry/Documents/SERVER OMSI_3.V1.0.0/obj/Debug/net10.0/compressed/o22fdggaz5-{0}-jk4m48lz5p-jk4m48lz5p.gz
+/home/raspberry/Documents/SERVER OMSI_3.V1.0.0/obj/Debug/net10.0/compressed/e60kvpnuki-{0}-yl1iwlcesg-yl1iwlcesg.gz
+/home/raspberry/Documents/SERVER OMSI_3.V1.0.0/obj/Debug/net10.0/compressed/fx5j9hfpkc-{0}-1j6hemi25x-1j6hemi25x.gz
+/home/raspberry/Documents/SERVER OMSI_3.V1.0.0/obj/Debug/net10.0/compressed/hwhark1ew2-{0}-6zmrn3jvzl-6zmrn3jvzl.gz
+/home/raspberry/Documents/SERVER OMSI_3.V1.0.0/obj/Debug/net10.0/compressed/m9mhqzts69-{0}-499z8bltxc-499z8bltxc.gz
+/home/raspberry/Documents/SERVER OMSI_3.V1.0.0/obj/Debug/net10.0/compressed/z2w1css4w0-{0}-g0kueg1y1c-g0kueg1y1c.gz
+/home/raspberry/Documents/SERVER OMSI_3.V1.0.0/obj/Debug/net10.0/compressed/ffyjxrj9c8-{0}-5vp0xeuc8t-5vp0xeuc8t.gz
+/home/raspberry/Documents/SERVER OMSI_3.V1.0.0/obj/Debug/net10.0/compressed/9xhhx6bt4y-{0}-tsi3663txe-tsi3663txe.gz
+/home/raspberry/Documents/SERVER OMSI_3.V1.0.0/obj/Debug/net10.0/compressed/bgx63affjg-{0}-ttro1eg5sh-ttro1eg5sh.gz
+/home/raspberry/Documents/SERVER OMSI_3.V1.0.0/obj/Debug/net10.0/compressed/e0odh9dwpm-{0}-rezdb4kqb1-rezdb4kqb1.gz
+/home/raspberry/Documents/SERVER OMSI_3.V1.0.0/obj/Debug/net10.0/compressed/8i1lm7fs4n-{0}-vx6l3rgodt-vx6l3rgodt.gz
+/home/raspberry/Documents/SERVER OMSI_3.V1.0.0/obj/Debug/net10.0/compressed/6w44rnyab4-{0}-u4m11808q0-u4m11808q0.gz
+/home/raspberry/Documents/SERVER OMSI_3.V1.0.0/obj/Debug/net10.0/compressed/b8n7xf9ap3-{0}-iknl21499e-iknl21499e.gz
+/home/raspberry/Documents/SERVER OMSI_3.V1.0.0/obj/Debug/net10.0/compressed/m3pvtt23wl-{0}-xn0kspt2ac-xn0kspt2ac.gz
+/home/raspberry/Documents/SERVER OMSI_3.V1.0.0/obj/Debug/net10.0/compressed/1faxubrmz9-{0}-r6nwvo3nmp-r6nwvo3nmp.gz
+/home/raspberry/Documents/SERVER OMSI_3.V1.0.0/obj/Debug/net10.0/compressed/v1n176b8rb-{0}-9np03hanh5-9np03hanh5.gz
+/home/raspberry/Documents/SERVER OMSI_3.V1.0.0/obj/Debug/net10.0/compressed/46fvstkulm-{0}-2ksmgwvvso-2ksmgwvvso.gz
+/home/raspberry/Documents/SERVER OMSI_3.V1.0.0/obj/Debug/net10.0/compressed/c22o299f88-{0}-6bjh73itta-6bjh73itta.gz
+/home/raspberry/Documents/SERVER OMSI_3.V1.0.0/obj/Debug/net10.0/compressed/proiph4jw3-{0}-6bjh73itta-6bjh73itta.gz
+/home/raspberry/Documents/SERVER OMSI_3.V1.0.0/obj/Debug/net10.0/compressed/6br5kii4bq-{0}-amq8krpgv6-amq8krpgv6.gz
+/home/raspberry/Documents/SERVER OMSI_3.V1.0.0/obj/Debug/net10.0/compressed/87iq2urxzk-{0}-ecvj8fj34l-ecvj8fj34l.gz
+/home/raspberry/Documents/SERVER OMSI_3.V1.0.0/obj/Debug/net10.0/compressed/hhf42gs3s7-{0}-h0jm11b8sp-h0jm11b8sp.gz
+/home/raspberry/Documents/SERVER OMSI_3.V1.0.0/obj/Debug/net10.0/compressed/2xg03p4knd-{0}-4hqkcnh1tx-4hqkcnh1tx.gz
+/home/raspberry/Documents/SERVER OMSI_3.V1.0.0/obj/Debug/net10.0/compressed/23raia6vt4-{0}-njmym17j80-njmym17j80.gz
+/home/raspberry/Documents/SERVER OMSI_3.V1.0.0/obj/Debug/net10.0/compressed/epytt74ude-{0}-gxuk6hqa8q-gxuk6hqa8q.gz
+/home/raspberry/Documents/SERVER OMSI_3.V1.0.0/obj/Debug/net10.0/compressed/y4ozfabjdw-{0}-gq85uqur8i-gq85uqur8i.gz
+/home/raspberry/Documents/SERVER OMSI_3.V1.0.0/obj/Debug/net10.0/compressed/wv3rt4e9iv-{0}-16kpb5gg6d-16kpb5gg6d.gz
+/home/raspberry/Documents/SERVER OMSI_3.V1.0.0/obj/Debug/net10.0/compressed/xxo6jktl2g-{0}-v8pqwegz0g-v8pqwegz0g.gz
+/home/raspberry/Documents/SERVER OMSI_3.V1.0.0/obj/Debug/net10.0/compressed/4tm8r40y20-{0}-40arxjh2ub-40arxjh2ub.gz
+/home/raspberry/Documents/SERVER OMSI_3.V1.0.0/obj/Debug/net10.0/compressed/swtgatva6c-{0}-tn925tbk11-tn925tbk11.gz
+/home/raspberry/Documents/SERVER OMSI_3.V1.0.0/obj/Debug/net10.0/compressed/n7nd1tfvuh-{0}-8fr7jq17mk-8fr7jq17mk.gz
+/home/raspberry/Documents/SERVER OMSI_3.V1.0.0/obj/Debug/net10.0/compressed/1cf7s0jbpw-{0}-1pkt6hwck9-1pkt6hwck9.gz
+/home/raspberry/Documents/SERVER OMSI_3.V1.0.0/obj/Debug/net10.0/compressed/e4uijgqmuc-{0}-f93d06w4r8-f93d06w4r8.gz
+/home/raspberry/Documents/SERVER OMSI_3.V1.0.0/obj/Debug/net10.0/staticwebassets.build.json
+/home/raspberry/Documents/SERVER OMSI_3.V1.0.0/obj/Debug/net10.0/staticwebassets.build.json.cache
+/home/raspberry/Documents/SERVER OMSI_3.V1.0.0/obj/Debug/net10.0/staticwebassets.development.json
+/home/raspberry/Documents/SERVER OMSI_3.V1.0.0/obj/Debug/net10.0/staticwebassets.build.endpoints.json
+/home/raspberry/Documents/SERVER OMSI_3.V1.0.0/obj/Debug/net10.0/swae.build.ex.cache
+/home/raspberry/Documents/SERVER OMSI_3.V1.0.0/obj/Debug/net10.0/SERVER O.DA374ABC.Up2Date
+/home/raspberry/Documents/SERVER OMSI_3.V1.0.0/obj/Debug/net10.0/SERVER OMSI_3.V1.0.0.dll
+/home/raspberry/Documents/SERVER OMSI_3.V1.0.0/obj/Debug/net10.0/refint/SERVER OMSI_3.V1.0.0.dll
+/home/raspberry/Documents/SERVER OMSI_3.V1.0.0/obj/Debug/net10.0/SERVER OMSI_3.V1.0.0.pdb
+/home/raspberry/Documents/SERVER OMSI_3.V1.0.0/obj/Debug/net10.0/SERVER OMSI_3.V1.0.0.genruntimeconfig.cache
+/home/raspberry/Documents/SERVER OMSI_3.V1.0.0/obj/Debug/net10.0/ref/SERVER OMSI_3.V1.0.0.dll
+/home/raspberry/Documents/SERVER OMSI_3.V1.0.0/obj/Debug/net10.0/compressed/lwqszktlyh-{0}-28lvrmzmmv-28lvrmzmmv.gz
+/home/raspberry/Documents/SERVER OMSI_3.V1.0.0/obj/Debug/net10.0/compressed/z6q7ugm5wb-{0}-tc66pd5yr4-tc66pd5yr4.gz
+/home/raspberry/Documents/SERVER OMSI_3.V1.0.0/obj/Debug/net10.0/compressed/lsen6hhmsh-{0}-w37u4comi8-w37u4comi8.gz
+/home/raspberry/Documents/SERVER OMSI_3.V1.0.0/obj/Debug/net10.0/compressed/vaw5anuv92-{0}-6g6j5xvy2v-6g6j5xvy2v.gz
+/home/raspberry/Documents/SERVER OMSI_3.V1.0.0/obj/Debug/net10.0/compressed/az0brxvi34-{0}-hdn6ydczhc-hdn6ydczhc.gz
+/home/raspberry/Documents/SERVER OMSI_3.V1.0.0/obj/Debug/net10.0/compressed/9atdncjc9q-{0}-10tv3pft54-10tv3pft54.gz
+/home/raspberry/Documents/SERVER OMSI_3.V1.0.0/obj/Debug/net10.0/compressed/hvw4fydwtt-{0}-ysj04d4pel-ysj04d4pel.gz
