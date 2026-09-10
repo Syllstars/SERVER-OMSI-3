@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Server Admin Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+
+    <!-- JetBrains Mono for IDE editor -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+    <!-- Monaco Editor from CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/monaco-editor@0.44.0/min/vs/loader.min.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-left">
+                <h1>🎮 Game Server Admin Dashboard</h1>
+                <div id="server-stats" class="server-stats">
+                    <span class="stat">📊 Total: <strong>0</strong></span>
+                    <span class="stat">🟢 Running: <strong>0</strong></span>
+                </div>
+            </div>
+            <div class="header-right">
+                <button id="theme-toggle" class="theme-toggle-btn" title="Toggle light/dark theme" aria-label="Toggle theme">
+                    🌙
+                </button>
+                <span id="sync-status" class="sync-status">● Connected</span>
+            </div>
+        </header>
+
+        <!-- Navigation Tabs -->
+        <nav class="nav-tabs">
+            <button class="nav-tab active" data-tab="servers">
+                🎮 Servers
+            </button>
+            <button class="nav-tab" data-tab="timetable">
+                🚌 Timetable Manager
+            </button>
+            <button class="nav-tab" data-tab="hof">
+                📋 HOF Manager
+            </button>
+            <button class="nav-tab" data-tab="instances">
+                ⚙ Instance Manager
+            </button>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- SERVERS TAB -->
+            <div id="tab-servers" class="tab-content active">
+                <!-- Start New Server Section -->
+                <section class="card start-server-section">
+                    <h2>Start New Server</h2>
+                    <form id="start-server-form" class="form">
+                        <div class="form-group">
+                            <label for="map-name">Map Name:</label>
+                            <input type="text" id="map-name" name="map-name" placeholder="e.g., Arena, Forest, Castle"
+                                required>
+                        </div>
+                        <div class="form-group">
+                            <label for="port">Port:</label>
+                            <input type="number" id="port" name="port" placeholder="e.g., 8001" min="1024" max="65535"
+                                required>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block" id="start-btn">
+                            ▶ Start Server
+                        </button>
+                    </form>
+                </section>
+
+                <!-- Running Servers Section -->
+                <section class="card servers-section">
+                    <div class="section-header">
+                        <h2>Running Servers</h2>
+                        <button id="refresh-btn" class="btn btn-secondary btn-sm">
+                            🔄 Refresh
+                        </button>
+                    </div>
+
+                    <div id="servers-container" class="servers-container">
+                        <div class="loading">Loading servers...</div>
+                    </div>
+                    <div id="registry-root"></div>
+                </section>
+            </div>
+
+            <!-- TIMETABLE TAB -->
+            <div id="tab-timetable" class="tab-content">
+                <!-- Route Selection Section -->
+                <section class="card timetable-section">
+                    <h2>🚌 Timetable Manager</h2>
+
+                    <!-- Route Selector -->
+                    <div class="timetable-controls">
+                        <div class="control-group">
+                            <label for="route-selector">Select Route:</label>
+                            <select id="route-selector" class="form-control">
+                                <option value="">-- Select a route --</option>
+                            </select>
+                        </div>
+
+                        <!-- Timetable Selector (appears after route selection) -->
+                        <div class="control-group" id="timetable-selector-group" style="display: none;">
+                            <label for="timetable-selector">Select Timetable:</label>
+                            <select id="timetable-selector" class="form-control">
+                                <option value="">-- Select a timetable --</option>
+                            </select>
+                        </div>
+
+                        <!-- Action Buttons -->
+                        <div class="control-actions">
+                            <button id="create-timetable-btn" class="btn btn-primary btn-sm" disabled>
+                                ✨ Create New Timetable
+                            </button>
+                            <button id="refresh-timetable-btn" class="btn btn-secondary btn-sm" disabled>
+                                🔄 Refresh Timetables
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Timetable Editor (hidden by default) -->
+                    <div id="timetable-editor" class="timetable-editor" style="display: none;">
+                        <div class="editor-header">
+                            <h3>Timetable Editor</h3>
+                            <div class="editor-header-info">
+                                <span id="timetable-info" class="timetable-info"></span>
+                                <button id="rename-timetable-btn" class="btn btn-secondary btn-sm" type="button" title="Rename timetable">
+                                    ✏️ Rename
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Timetable Table -->
+                        <div class="table-wrapper">
+                            <table id="timetable-table" class="timetable-table">
+                                <thead>
+                                    <tr>
+                                        <th>Order</th>
+                                        <th>Stop Name</th>
+                                        <th>Arrival Time</th>
+                                        <th>Departure Time</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="timetable-tbody">
+                                    <!-- Rows generated dynamically -->
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <!-- Add Row Button -->
+                        <div class="editor-actions">
+                            <button id="add-stop-btn" class="btn btn-secondary btn-sm">
+                                ➕ Add Stop
+                            </button>
+                        </div>
+
+                        <!-- Save Section -->
+                        <div class="editor-save">
+                            <button id="save-timetable-btn" class="btn btn-primary btn-block">
+                                💾 Save Timetable
+                            </button>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- HOF MANAGER TAB -->
+            <div id="tab-hof" class="tab-content">
+                <section class="card hof-section">
+                    <h2>📋 HOF Manager</h2>
+
+                    <!-- HOF Upload Section -->
+                    <div class="hof-upload">
+                        <h3>Upload HOF File</h3>
+
+                        <!-- Drag & Drop Zone -->
+                        <div id="hof-dropzone" class="hof-dropzone">
+                            <div class="dropzone-content">
+                                <div class="dropzone-icon">📁</div>
+                                <p class="dropzone-text">Drag & drop your .hof file here</p>
+                                <p class="dropzone-subtext">or click to browse</p>
+                            </div>
+                            <input type="file" id="hof-file-input" accept=".hof" hidden />
+                        </div>
+
+                        <!-- Upload Button -->
+                        <button id="upload-hof-btn" class="btn btn-primary btn-block" style="margin-top: 15px;">
+                            📤 Upload HOF File
+                        </button>
+                    </div>
+
+                    <!-- HOF Files List -->
+                    <div class="hof-files-section">
+                        <div class="hof-files-header">
+                            <h3>Stored HOF Files</h3>
+                            <div class="hof-files-controls">
+                                <input type="text" id="hof-list-search" class="hof-list-search"
+                                    placeholder="🔍 Filter by name or map…" autocomplete="off" />
+                                <button id="hof-export-csv-btn" class="hof-btn hof-btn-export"
+                                    title="Export list as CSV">
+                                    📊 Export CSV
+                                </button>
+                            </div>
+                        </div>
+                        <div class="table-wrapper">
+                            <table class="hof-table">
+                                <thead>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>File Name</th>
+                                        <th>Map Name</th>
+                                        <th>Routes</th>
+                                        <th>Stops</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="hof-files-tbody">
+                                    <tr>
+                                        <td colspan="6" class="empty-row">Loading HOF files...</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div id="hof-list-footer" class="hof-list-footer" style="display:none;"></div>
+                    </div>
+
+                    <!-- HOF Edit Modal - IDE Style -->
+                    <div id="hof-edit-modal" class="modal hidden">
+                        <div class="modal-overlay"></div>
+
+                        <div class="modal-content hof-edit-modal-content">
+                            <!-- HOF IDE Header ─────────────────────────────────────── -->
+                            <header class="hof-ide-header" role="banner">
+
+                                <!-- Left: file identity -->
+                                <div class="hof-ide-header__file">
+                                    <span class="hof-ide-header__glyph" aria-hidden="true">⬡</span>
+                                    <span class="hof-ide-header__product">OMSI HOF</span>
+                                    <span class="hof-ide-header__sep" aria-hidden="true">›</span>
+                                    <span class="hof-ide-header__name" id="edit-hof-filename">Unknown</span>
+                                </div>
+
+                                <!-- Centre: action toolbar -->
+                                <div class="hof-ide-header__toolbar" id="hof-editor-toolbar" role="toolbar" aria-label="Editor actions">
+                                    <!-- Undo / Redo group -->
+                                    <div class="hof-toolbar-group" role="group" aria-label="History">
+                                        <button id="hof-undo-btn"   class="hof-toolbar-btn" title="Undo (Ctrl+Z)" type="button">
+                                            <span class="hof-toolbar-btn__icon" aria-hidden="true">↩</span>
+                                            <span class="hof-toolbar-btn__label">Undo</span>
+                                        </button>
+                                        <button id="hof-redo-btn"   class="hof-toolbar-btn" title="Redo (Ctrl+Y)" type="button">
+                                            <span class="hof-toolbar-btn__icon" aria-hidden="true">↪</span>
+                                            <span class="hof-toolbar-btn__label">Redo</span>
+                                        </button>
+                                    </div>
+
+                                    <span class="hof-toolbar-sep" aria-hidden="true"></span>
+
+                                    <!-- Diff Viewer -->
+                                    <div class="hof-toolbar-group" role="group" aria-label="Diff">
+                                        <button id="hof-diff-btn" class="hof-toolbar-btn hof-toolbar-btn--diff" title="Show Diff — compare current vs saved version" type="button">
+                                            <span class="hof-toolbar-btn__icon" aria-hidden="true">≠</span>
+                                            <span class="hof-toolbar-btn__label">Diff</span>
+                                        </button>
+                                        <button id="hof-history-btn" class="hof-toolbar-btn hof-toolbar-btn--history" title="Server version history — browse, compare, rollback" type="button">
+                                            <span class="hof-toolbar-btn__icon" aria-hidden="true">🕑</span>
+                                            <span class="hof-toolbar-btn__label">History</span>
+                                        </button>
+                                    </div>
+
+                                    <span class="hof-toolbar-sep" aria-hidden="true"></span>
+
+                                    <!-- Auto-Format -->
+                                    <div class="hof-toolbar-group" role="group" aria-label="Format">
+                                        <button id="hof-format-btn" class="hof-toolbar-btn hof-toolbar-btn--format" title="Auto-format — normalize whitespace and blank lines, preview diff before applying" type="button">
+                                            <span class="hof-toolbar-btn__icon" aria-hidden="true">⫶</span>
+                                            <span class="hof-toolbar-btn__label">Format</span>
+                                        </button>
+                                    </div>
+
+                                    <span class="hof-toolbar-sep" aria-hidden="true"></span>
+
+                                    <!-- Fold / Unfold group -->
+                                    <div class="hof-toolbar-group" role="group" aria-label="Folding">
+                                        <button id="hof-fold-all-btn"   class="hof-toolbar-btn" title="Fold All (collapse sections)" type="button">
+                                            <span class="hof-toolbar-btn__icon" aria-hidden="true">⊟</span>
+                                            <span class="hof-toolbar-btn__label">Fold</span>
+                                        </button>
+                                        <button id="hof-unfold-all-btn" class="hof-toolbar-btn" title="Unfold All (expand sections)" type="button">
+                                            <span class="hof-toolbar-btn__icon" aria-hidden="true">⊞</span>
+                                            <span class="hof-toolbar-btn__label">Unfold</span>
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <!-- Right: close -->
+                                <button id="edit-modal-close-btn" class="hof-ide-header__close" title="Close editor" aria-label="Close HOF editor">✕</button>
+
+                            </header>
+
+
+                            <!-- ═══ Tab Bar ═══════════════════════════════════════════ -->
+                            <div class="hof-tab-bar" id="hof-tab-bar" role="tablist" aria-label="Open HOF files">
+                                <div class="hof-tabs-scroll" id="hof-tabs-scroll">
+                                    <!-- Tabs rendered by JS -->
+                                </div>
+                            </div>
+
+                            <!-- Backup Restore Banner ─────────────────────────────── -->
+                            <!-- Shown when a local auto-backup differs from the server version -->
+                            <div id="hof-backup-banner" class="hof-backup-banner" hidden>
+                                <span class="hof-backup-banner__icon" aria-hidden="true">⚠</span>
+                                <p class="hof-backup-banner__msg">
+                                    Unsaved local backup found —
+                                    <span id="backup-banner-detail" class="hof-backup-banner__time">—</span>
+                                </p>
+                                <div class="hof-backup-banner__actions">
+                                    <button id="backup-restore-btn" class="hof-backup-btn hof-backup-btn--restore" type="button">↩ Restore backup</button>
+                                    <button id="backup-keep-btn"    class="hof-backup-btn hof-backup-btn--keep"    type="button">Keep server version</button>
+                                    <button id="backup-discard-btn" class="hof-backup-btn hof-backup-btn--discard" type="button">Discard</button>
+                                </div>
+                            </div>
+
+                            <!-- Main IDE Layout -->
+                            <div class="hof-edit-body">
+                                <div class="hof-ide-layout">
+                                    <!-- Left Column: Editor + Validation -->
+                                    <div class="hof-ide-left">
+                                        <!-- IDE Breadcrumb Bar -->
+                                        <div class="hof-editor-breadcrumb" id="hof-editor-breadcrumb">
+                                            <span class="breadcrumb-icon">📄</span>
+                                            <span class="breadcrumb-filename" id="breadcrumb-filename">Unknown.hof</span>
+                                            <span class="breadcrumb-sep">›</span>
+                                            <span class="breadcrumb-section" id="breadcrumb-section">—</span>
+                                        </div>
+
+                                        <!-- Monaco Editor Container -->
+                                        <div id="hof-editor-container" class="hof-editor-container">
+                                            <!-- Monaco Editor will be mounted here -->
+                                        </div>
+
+                                        <!-- IDE Status Bar -->
+                                        <div class="hof-editor-statusbar" id="hof-editor-statusbar">
+                                            <div class="statusbar-left">
+                                                <span class="statusbar-item statusbar-save-state state-saved" id="statusbar-save-state" title="All changes saved">✓ Saved</span>
+                                                <span class="statusbar-divider"></span>
+                                                <span class="statusbar-item statusbar-cursor" id="statusbar-cursor" title="Cursor position">Ln 1, Col 1</span>
+                                                <span class="statusbar-divider"></span>
+                                                <span class="statusbar-item statusbar-selection" id="statusbar-selection" title="Selection"></span>
+                                            </div>
+                                            <div class="statusbar-right">
+                                                <span class="statusbar-item" id="statusbar-linecount" title="Total lines">0 lines</span>
+                                                <span class="statusbar-divider"></span>
+                                                <span class="statusbar-item statusbar-lang">OMSI HOF</span>
+                                                <span class="statusbar-divider"></span>
+                                                <span class="statusbar-item statusbar-encoding">UTF-8</span>
+                                                <span class="statusbar-item statusbar-modified" id="statusbar-modified" title="Unsaved changes" style="display:none">●</span>
+                                            </div>
+                                        </div>
+
+                                        <!-- Validation Panel -->
+                                        <div id="hof-validation-panel" class="hof-validation-panel">
+                                            <div class="validation-resize-handle" title="Drag to resize"></div>
+                                            <div class="validation-header">
+                                                <span class="validation-title">📋 Validation</span>
+                                                <div class="validation-summary">
+                                                    <span id="validation-errors-count" class="validation-count errors">
+                                                        ❌ <span class="count-value">0</span>
+                                                    </span>
+                                                    <span id="validation-warnings-count"
+                                                        class="validation-count warnings">
+                                                        ⚠️ <span class="count-value">0</span>
+                                                    </span>
+                                                    <span id="validation-status"
+                                                        class="validation-status-text">Ready</span>
+                                                </div>
+                                                <button class="validation-collapse-btn" title="Collapse/Expand panel" type="button">−</button>
+                                            </div>
+                                            <!-- Parse output strip — shown after Save & Parse -->
+                                            <div id="hof-parse-output" class="hof-parse-output" hidden></div>
+                                            <div id="hof-validation-list" class="validation-list">
+                                                <div class="validation-empty">Ready to validate</div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Right Column: Navigator Sidebar -->
+                                    <aside id="hof-navigator" class="hof-navigator">
+                                        <div class="hof-navigator-header">
+                                            <span class="hof-navigator-title">🧭 Navigator</span>
+                                            <button id="hof-navigator-toggle" class="hof-navigator-toggle"
+                                                title="Hide Navigator" type="button">−</button>
+                                        </div>
+
+                                        <div class="hof-navigator-search-container">
+                                            <input type="text" id="hof-navigator-search" class="hof-navigator-search"
+                                                placeholder="Search..." />
+                                        </div>
+
+                                        <div id="hof-navigator-list" class="hof-navigator-list">
+                                            <div class="hof-nav-loading">Scanning...</div>
+                                        </div>
+                                    </aside>
+                                </div>
+                            </div>
+
+                            <!-- Footer -->
+                            <div class="modal-footer hof-edit-footer">
+
+                                <!-- Optional version note — collapsed by default -->
+                                <div class="hof-note-row">
+                                    <button id="hof-note-toggle" class="hof-note-toggle" type="button" title="Add a note to this version">
+                                        🏷 Add note…
+                                    </button>
+                                    <input type="text" id="hof-version-note" class="hof-version-note"
+                                        placeholder="Version note (optional)" maxlength="200"
+                                        style="display:none;" autocomplete="off" />
+                                </div>
+
+                                <div class="edit-actions">
+                                    <button id="edit-hof-cancel-btn" class="btn btn-secondary">
+                                        ✕ Cancel
+                                    </button>
+                                    <button id="edit-hof-save-btn" class="btn btn-secondary">
+                                        💾 Save (Ctrl+S)
+                                    </button>
+                                    <button id="edit-hof-save-parse-btn" class="btn btn-primary">
+                                        💾 Save & Parse
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Hidden file inputs -->
+                    <input type="file" id="hof-replace-file-input" accept=".hof" hidden />
+                    <div class="hof-preview-section" id="hof-preview-section" style="display: none;">
+                        <h3>HOF Preview</h3>
+                        <div class="preview-header">
+                            <div class="preview-info">
+                                <span class="preview-label">Map:</span>
+                                <span id="preview-map-name" class="preview-value">-</span>
+                            </div>
+                            <div class="preview-stats">
+                                <span class="stat-badge">📍 <span id="hof-route-count">0</span> Routes</span>
+                                <span class="stat-badge">⛔ <span id="hof-stop-count">0</span> Stops</span>
+                            </div>
+                        </div>
+
+                        <div class="preview-search">
+                            <input type="text" id="routes-search-input" class="search-input"
+                                placeholder="Search routes..." />
+                        </div>
+
+                        <div id="routes-list" class="routes-list">
+                            <!-- Routes rendered dynamically -->
+                        </div>
+
+                        <div class="preview-actions">
+                            <button id="preview-cancel-btn" class="btn btn-secondary">
+                                ✕ Cancel
+                            </button>
+                            <button id="preview-import-btn" class="btn btn-primary">
+                                📥 Import this HOF
+                            </button>
+                        </div>
+                    </div>
+
+                </section>
+            </div>
+
+            <!-- INSTANCE MANAGER TAB -->
+            <div id="tab-instances" class="tab-content">
+                <section class="card instance-section">
+
+                    <!-- Header: title + toolbar -->
+                    <div class="instance-header">
+                        <h2>⚙ Instance Manager</h2>
+                        <div class="instance-toolbar">
+                            <input type="text" id="instance-search" class="instance-search"
+                                placeholder="🔍 Search by name, map…" autocomplete="off" />
+                            <select id="instance-status-filter" class="instance-status-filter">
+                                <option value="">All statuses</option>
+                                <option value="running">🟢 Running</option>
+                                <option value="starting">🟡 Starting</option>
+                                <option value="stopped">⚫ Stopped</option>
+                                <option value="crashed">🔴 Crashed</option>
+                            </select>
+                            <button id="instance-refresh-btn" class="btn btn-secondary btn-sm">
+                                🔄 Refresh
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Status bar -->
+                    <div id="instance-status-bar" class="instance-status-bar">
+                        <span id="instance-count-summary" class="instance-count-summary">—</span>
+                        <span id="instance-last-update" class="instance-last-update"></span>
+                    </div>
+
+                    <!-- 2-column layout: cards + events panel -->
+                    <div class="instance-body">
+
+                        <!-- Left: cards grid -->
+                        <div id="instances-container" class="instances-container">
+                            <div class="instance-loading">
+                                <span class="instance-loading-icon">⚙</span>
+                                Loading instances…
+                            </div>
+                        </div>
+
+                        <!-- Right: events panel -->
+                        <aside class="instance-events-panel" id="instance-events-panel">
+                            <div class="instance-events-header">
+                                <span class="instance-events-title">📋 Events</span>
+                                <button class="instance-events-clear" id="instance-events-clear"
+                                    title="Clear event log" type="button">Clear</button>
+                            </div>
+                            <div class="instance-events-list" id="instance-events-list">
+                                <div class="instance-events-empty">No events yet.</div>
+                            </div>
+                        </aside>
+                    </div>
+
+                </section>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>Auto-refresh: Every 2 seconds | Last update: <span id="last-update">--:--:--</span></p>
+            <p id="debug-info" style="display:none;" aria-hidden="true">Debug: Ready</p>
+        </footer>
+    </div>
+
+    <!-- HOF Diff Viewer Modal ─────────────────────────────────────────────── -->
+    <div id="hof-diff-modal" class="modal hidden" role="dialog" aria-modal="true" aria-label="HOF Diff Viewer">
+        <div class="modal-overlay" id="hof-diff-overlay"></div>
+
+        <div class="hof-diff-modal-content">
+
+            <!-- Header -->
+            <div class="hof-diff-header">
+                <div class="hof-diff-header__left">
+                    <span class="hof-diff-header__icon" aria-hidden="true">≠</span>
+                    <div class="hof-diff-header__titles">
+                        <span class="hof-diff-header__title">Diff Viewer</span>
+                        <span class="hof-diff-header__filename" id="diff-modal-filename">Unknown.hof</span>
+                    </div>
+                </div>
+
+                <div class="hof-diff-header__legend">
+                    <span class="diff-legend diff-legend--removed">Removed</span>
+                    <span class="diff-legend diff-legend--added">Added</span>
+                    <span class="diff-legend diff-legend--modified">Modified</span>
+                </div>
+
+                <div class="hof-diff-header__controls">
+                    <button id="hof-diff-inline-toggle" class="hof-toolbar-btn" title="Toggle side-by-side / inline view" type="button">
+                        <span class="hof-toolbar-btn__icon" aria-hidden="true">⇔</span>
+                        <span class="hof-toolbar-btn__label">Side-by-side</span>
+                    </button>
+                    <button id="hof-diff-close-btn" class="hof-ide-header__close" title="Close Diff Viewer" type="button" aria-label="Close">✕</button>
+                </div>
+            </div>
+
+            <!-- Column labels -->
+            <div class="hof-diff-labels" id="hof-diff-labels">
+                <div class="hof-diff-label hof-diff-label--original">
+                    <span class="diff-label-icon" aria-hidden="true">📥</span>
+                    Server version <span class="diff-label-tag">(original)</span>
+                </div>
+                <div class="hof-diff-label hof-diff-label--modified">
+                    <span class="diff-label-icon" aria-hidden="true">✏️</span>
+                    Current edit <span class="diff-label-tag">(modified)</span>
+                </div>
+            </div>
+
+            <!-- Monaco DiffEditor mount point -->
+            <div id="hof-diff-editor-mount" class="hof-diff-editor-mount" aria-label="Diff editor">
+                <div class="hof-diff-loading" id="hof-diff-loading">
+                    <span class="diff-loading-icon" aria-hidden="true">≠</span>
+                    Loading diff…
+                </div>
+            </div>
+
+            <!-- Footer -->
+            <div class="hof-diff-footer">
+                <div class="hof-diff-stats" id="hof-diff-stats">
+                    <!-- populated by JS: X additions, Y deletions -->
+                </div>
+                <div class="hof-diff-footer__actions">
+                    <button id="hof-diff-no-changes" class="hof-diff-no-changes" hidden>
+                        ✓ No changes
+                    </button>
+                    <!-- Shown only in format-preview mode -->
+                    <button id="hof-format-apply-btn" class="btn btn-primary hof-format-apply-btn" type="button" hidden>
+                        ✓ Apply Format
+                    </button>
+                    <button id="hof-diff-close-footer-btn" class="btn btn-secondary" type="button">
+                        Close
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Live Logs Modal with WebSocket -->
+    <div id="log-modal" class="modal hidden">
+        <div class="modal-overlay"></div>
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="modal-header-title">
+                    <h2>📋 Live Logs - <span id="log-server-name">Server</span></h2>
+                    <span id="log-live-indicator" class="live-indicator">
+                        <span class="live-dot"></span>
+                        LIVE
+                    </span>
+                </div>
+                <button id="log-modal-close" class="modal-close-btn" title="Close (Alt+Q)">✕</button>
+            </div>
+            <div class="modal-body">
+                <div id="log-content" class="terminal">
+                    <div class="terminal-loading">Connecting to WebSocket...</div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <div class="modal-controls">
+                    <button id="log-clear-btn" class="btn btn-secondary btn-sm">
+                        🗑 Clear Logs
+                    </button>
+                    <button id="log-auto-scroll-btn" class="btn btn-secondary btn-sm active" title="Toggle auto-scroll">
+                        📌 Auto-scroll: ON
+                    </button>
+                    <span id="log-ws-status" class="log-status">
+                        <span class="ws-indicator connecting"></span>
+                        Connecting...
+                    </span>
+                </div>
+                <button id="log-modal-close-btn" class="btn btn-danger btn-sm">
+                    ✕ Close
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Global toast notification container -->
+    <div id="toast-container" role="status" aria-live="polite" aria-atomic="false"></div>
+
+    <!-- Keyboard shortcuts help modal -->
+    <div id="shortcuts-modal" class="shortcuts-modal hidden" role="dialog" aria-modal="true" aria-label="Keyboard shortcuts">
+        <div class="shortcuts-overlay"></div>
+        <div class="shortcuts-content">
+            <div class="shortcuts-header">
+                <span class="shortcuts-title">⌨ Keyboard Shortcuts</span>
+                <button id="shortcuts-close" class="shortcuts-close" aria-label="Close">✕</button>
+            </div>
+            <div class="shortcuts-body">
+                <div class="shortcuts-col">
+                    <div class="shortcuts-section-title">HOF Editor</div>
+                    <div class="shortcuts-row"><kbd>Ctrl</kbd>+<kbd>S</kbd><span>Save file</span></div>
+                    <div class="shortcuts-row"><kbd>Ctrl</kbd>+<kbd>Z</kbd><span>Undo</span></div>
+                    <div class="shortcuts-row"><kbd>Ctrl</kbd>+<kbd>Y</kbd><span>Redo</span></div>
+                    <div class="shortcuts-row"><kbd>Ctrl</kbd>+<kbd>F</kbd><span>Find in file</span></div>
+                    <div class="shortcuts-row"><kbd>Ctrl</kbd>+<kbd>H</kbd><span>Find & Replace</span></div>
+                    <div class="shortcuts-row"><kbd>Ctrl</kbd>+<kbd>G</kbd><span>Go to line</span></div>
+                    <div class="shortcuts-row"><kbd>Ctrl</kbd>+<kbd>/</kbd><span>Toggle comment</span></div>
+                    <div class="shortcuts-row"><kbd>Alt</kbd>+<kbd>Click</kbd><span>Multi-cursor</span></div>
+                </div>
+                <div class="shortcuts-col">
+                    <div class="shortcuts-section-title">Folding</div>
+                    <div class="shortcuts-row"><kbd>Ctrl</kbd>+<kbd>K</kbd> <kbd>0</kbd><span>Fold All</span></div>
+                    <div class="shortcuts-row"><kbd>Ctrl</kbd>+<kbd>K</kbd> <kbd>J</kbd><span>Unfold All</span></div>
+                    <div class="shortcuts-row"><kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>[</kbd><span>Fold region</span></div>
+                    <div class="shortcuts-row"><kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>]</kbd><span>Unfold region</span></div>
+                    <div class="shortcuts-section-title" style="margin-top:16px;">Tabs</div>
+                    <div class="shortcuts-row"><kbd>Ctrl</kbd>+<kbd>Tab</kbd><span>Next tab</span></div>
+                    <div class="shortcuts-row"><kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>Tab</kbd><span>Previous tab</span></div>
+                    <div class="shortcuts-row"><kbd>Ctrl</kbd>+<kbd>W</kbd><span>Close active tab</span></div>
+                    <div class="shortcuts-row"><kbd>Middle click</kbd><span>Close tab</span></div>
+                    <div class="shortcuts-row"><kbd>Drag</kbd><span>Reorder tabs</span></div>
+                </div>
+                <div class="shortcuts-col">
+                    <div class="shortcuts-section-title">Navigation</div>
+                    <div class="shortcuts-row"><kbd>Ctrl</kbd>+<kbd>Space</kbd><span>Trigger suggestion</span></div>
+                    <div class="shortcuts-row"><kbd>F12</kbd><span>Go to definition</span></div>
+                    <div class="shortcuts-row"><kbd>Escape</kbd><span>Close modal / panel</span></div>
+                    <div class="shortcuts-row"><kbd>Alt</kbd>+<kbd>Q</kbd><span>Close log modal</span></div>
+                    <div class="shortcuts-section-title" style="margin-top:16px;">App</div>
+                    <div class="shortcuts-row"><kbd>?</kbd><span>Show this help</span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="registry-module.js"></script>
+</body>
+
+</html>
