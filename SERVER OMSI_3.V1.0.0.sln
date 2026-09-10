@@ -1,0 +1,24 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.2.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SERVER OMSI_3.V1.0.0", "SERVER OMSI_3.V1.0.0.csproj", "{05451B19-6143-E07F-554B-5584F4936567}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{05451B19-6143-E07F-554B-5584F4936567}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{05451B19-6143-E07F-554B-5584F4936567}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{05451B19-6143-E07F-554B-5584F4936567}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{05451B19-6143-E07F-554B-5584F4936567}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4F943E2C-A317-428A-8B1F-584765BB273B}
+	EndGlobalSection
+EndGlobal
